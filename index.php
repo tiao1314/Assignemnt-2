@@ -1,3 +1,7 @@
+<?php
+require_once('database/database.php');
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -16,7 +20,7 @@
     
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Eighth navbar example">
       <div class="container">
-        <a class="navbar-brand" href="index.php">Site Title</a>
+        <a class="navbar-brand" href="index.php">Games Datbase </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -42,12 +46,38 @@
     </nav>
 
 <main class="container">
-  <div class="starter-template text-center">
-    <h1>Bootstrap starter template</h1>
-    <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-  </div>
+<h1>Product List</h1>
+    <section>
+        <!-- display a table of game info -->
+        <table>
+            <tr>
+                <th>Game ID</th>
+                <th>Name</th>
+                <th>Date Released</th>
+                <th>genre</th>
+                <th>Platform</th>
+                <th>Age_rating</th>
+                <th>Price</th>
+                <th>Description</th>               
+            </tr>
+
+            <?php foreach ($games as $game) : ?>
+            <tr>
+                <td><?php echo $game['gameID']; ?></td>
+                </form></td>
+            </tr>
+            <?php endforeach; ?>
+
+            
+        </table>
+    </section>
+
+
 
 </main><!-- /.container -->
     <script src="js/bootstrap.bundle.min.js"></script>
+    <footer>
+    <p>&copy; <?php echo date("Y"); ?> Games Database, Inc.</p>
+</footer>
   </body>
 </html>
