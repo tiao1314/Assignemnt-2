@@ -1,6 +1,12 @@
 <?php
 include 'includes/include.php';
 ?>
+
+<head>
+    <title>Contact form handler</title>
+    <link rel="stylesheet" href="circle.css">
+</head>
+
 <?php
 
 $errors = '';
@@ -54,9 +60,11 @@ else
 </head>
 
 <body>
+<div class="loading"></div>
 <!-- This page is displayed only if there is some error -->
 <?php
 echo nl2br($errors);
 ?>
 </body>
+
 </html>
