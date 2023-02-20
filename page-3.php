@@ -1,20 +1,5 @@
 <?php
 include 'includes/include.php';
-
-
-
-session_start();
-if (isset($_SESSION['contact_form_success'])) {
-    // Display confirmation message
-    ?>
-    <div class="confirmation-message">
-        <p>Thank you for contacting us. Your message has been sent successfully.</p>
-    </div>
-    <?php
-
-    // Clear success message from session
-    unset($_SESSION['contact_form_success']);
-}
 ?>
 
 <!DOCTYPE HTML> 
