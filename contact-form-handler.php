@@ -2,6 +2,8 @@
 
 $errors = '';
 $myemail = 'D00244247@student.dkit.ie';// <-----Put your DkIT email address here.
+
+// make sure these 3 fields are filled out
 if(empty($_POST['name'])  ||
    empty($_POST['email']) ||
    empty($_POST['message']))
@@ -33,9 +35,11 @@ if( empty($errors))
 
         mail($to,$email_subject,$email_body,$headers);
         //redirect to the 'thank you' page
-        header('Location: contact-form-thank-you.html');
+        header('Location: contact-form-thank-you.php');
         exit();
 }
+
+
 ?>
 <!DOCTYPE HTML>
 <html>
