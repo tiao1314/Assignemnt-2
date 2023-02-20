@@ -1,5 +1,20 @@
 <?php
 include 'includes/include.php';
+
+
+
+session_start();
+if (isset($_SESSION['contact_form_success'])) {
+    // Display confirmation message
+    ?>
+    <div class="confirmation-message">
+        <p>Thank you for contacting us. Your message has been sent successfully.</p>
+    </div>
+    <?php
+
+    // Clear success message from session
+    unset($_SESSION['contact_form_success']);
+}
 ?>
 
 <!DOCTYPE HTML> 
@@ -39,11 +54,18 @@ include 'includes/include.php';
 			<label for='message'>Message:<span class="required">*</span></label> <br>
 			<textarea name="message"></textarea>
 		</p>
+		<p>
+			<label for='file'>Attachment:</label> <br>
+			<input type="file" name="attachment">
+		</p>
 
 		<p class="required-text">* Required fields</p>
 
 		<input type="submit" value="Submit"><br>
 	</form>
+
+	<!-- Display the confirmation message if the form has been submitted-->
+
 
 	</main><!-- /.container -->
     <script src="js/bootstrap.bundle.min.js"></script>
