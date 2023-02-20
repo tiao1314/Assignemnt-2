@@ -1,67 +1,69 @@
 <?php
-require_once('database/database.php');
-
-// Get all games
-$query = 'SELECT * FROM games ORDER BY gameID';
-$statement = $db->prepare($query);
-$statement->execute();
-$games = $statement->fetchAll();
-$statement->closeCursor();
-
-?>
-
-<?php
 include 'includes/include.php'
 ?>
+<!DOCTYPE HTML> 
+<html>
+<head>
+	<title>Contact us</title>
+	<!-- define some style elements-->
+	<style>
+		h1 {
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 16px;
+			font-weight: bold;
+		}
+		label, a {
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 12px; 
+		}
+	</style>	
+</head>
+<body>
+	<h1>Contact us</h1>
+	<form method="POST" name="contactform" action="contact-form-handler.php"> 
+		<p>
+			<label for='name'>Your Name:</label> <br>
+			<input type="text" name="name">
+		</p>
+		<p>
+			<label for='email'>Email Address:</label> <br>
+			<input type="text" name="email"> <br>
+		</p>
+		<p>
+			<label for='telephone'>Telephone:</label> <br>
+			<input type="tel" name="telephone"> <br>
+		</p>
+		<p>
+			<label for='company'>Company:</label> <br>
+			<input type="text" name="company"> <br>
+		</p>
+		<p>
+			<label for='subject'>Subject:</label> <br>
+			<input type="text" name="subject"> <br>
+		</p>
+		<p>
+			<label for='country'>Country:</label> <br>
+			<input type="text" name="country"> <br>
+		</p>
+		<p>
+			<label for='message'>Message:</label> <br>
+			<textarea name="message"></textarea>
+		</p>
+		<input type="submit" value="Submit"><br>
+	</form>
 
+	<script language="JavaScript">
+	var frmvalidator  = new Validator("contactform");
+	frmvalidator.addValidation("name","req","Please provide your name"); 
+	frmvalidator.addValidation("email","req","Please provide your email"); 
+	frmvalidator.addValidation("email","email","Please enter a valid email address"); 
+	frmvalidator.addValidation("telephone","req","Please provide your telephone number"); 
+	frmvalidator.addValidation("telephone","minlen=10","Please enter a valid telephone number"); 
+	frmvalidator.addValidation("company","req","Please provide your company name"); 
+	frmvalidator.addValidation("subject","req","Please provide a subject for your message"); 
+	frmvalidator.addValidation("country","req","Please provide your country name"); 
+	frmvalidator.addValidation("message","req","Please provide a message"); 
+</script>
 
-<main class="container">
-<h1>Product List</h1>
-    <section>
-        <!-- display a table of game info -->
-        <table>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Founded</th>
-                <th>genre</th>
-                <th>Platform</th>
-                <th>Age_rating</th>
-                <th>Price</th>
-                <th>Description</th>               
-            </tr>
-
-            <?php foreach ($games as $game) : ?>
-            <tr>
-                <td><?php echo $game['gameID']; ?></td>
-                <td><?php echo $game['name']; ?></td>
-                <td><?php echo $game['release_date']; ?></td>
-                <td><?php echo $game['genre']; ?></td>
-                <td><?php echo $game['platform']; ?></td>
-                <td><?php echo $game['age_rating']; ?></td>
-                <td><?php echo $game['price']; ?></td>
-                <td><?php echo $game['description']; ?></td>
-                
-                
-                
-
-                
-            </tr>
-            <?php endforeach; ?>
-        </table>
-
-
-            
-    </section>
-
-
-
-</main><!-- /.container -->
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <footer>
-    <p>&copy; <?php echo date("Y"); ?> Games Database, Inc.</p>
-</footer>
-  </body>
+</body>
 </html>
-
-

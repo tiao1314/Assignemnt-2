@@ -33,7 +33,7 @@
                 <a class="nav-link" aria-current="page" href="page-2.php">Delete</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="page-3.php">Edit</a>
+                <a class="nav-link" aria-current="page" href="page-3.php">Contact</a>
               </li>
             </ul>
           </span>
