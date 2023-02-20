@@ -42,6 +42,7 @@ include 'includes/include.php'
                 <td><?php echo $game['price']; ?></td>
                 <td><?php echo $game['description']; ?></td>
                 
+                
             </tr>
             <?php endforeach; ?>
         </table>

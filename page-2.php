@@ -28,7 +28,8 @@ include 'includes/include.php'
                 <th>Platform</th>
                 <th>Age_rating</th>
                 <th>Price</th>
-                <th>Description</th>               
+                <th>Description</th>  
+                <th>Delete</th>
             </tr>
 
             <?php foreach ($games as $game) : ?>
@@ -41,13 +42,12 @@ include 'includes/include.php'
                 <td><?php echo $game['age_rating']; ?></td>
                 <td><?php echo $game['price']; ?></td>
                 <td><?php echo $game['description']; ?></td>
-                <td><form action="delete_game.php" method="post">
-                    <input type="hidden" name="game_id"
-                           value="<?php echo $game['gameID']; ?>">
-                    <input type="hidden" name="name"
-                           value="<?php echo $game['name']; ?>">
-                    <input type="submit" value="Delete">
-                </form></td>
+                <td>
+                <form action="delete_game.php" method="post">
+            <input type="hidden" name="game_id" value="<?php echo $game['gameID']; ?>">
+            <button type="submit" class="btn btn-danger delete-btn">Delete</button>
+        </form>
+            </td>
                 
             </tr>
             <?php endforeach; ?>
