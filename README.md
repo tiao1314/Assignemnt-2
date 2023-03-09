@@ -1,3 +1,5 @@
+![giphy](https://user-images.githubusercontent.com/97777378/224152467-645cc882-73cc-4da3-bdb1-165809fe0b11.gif)
+
 # Games Database
 
 This project displays information about video games and their developers using PHP and a MySQL database.
