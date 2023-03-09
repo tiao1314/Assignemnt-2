@@ -43,4 +43,4 @@ This file displays information about video game developers.
 
 ## Credits
 
-This project was created by tiao. If you have any questions or concerns, please contact us at info@gamesdatabase.com.
+This project was created by tiao. If you have any questions or concerns, please contact me at discord tiao#1314
