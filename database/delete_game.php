@@ -16,3 +16,4 @@ if ($gameID != false) {
 
 // Display the games List page
 include('index.php');
+?>
