@@ -23,14 +23,22 @@ include 'includes/include.php'
             <tr>
                 <th>ID</th>
                 <th>Name</th>
+                <th>Delete</th>
             </tr>
 
             <?php foreach ($developers as $developer) : ?>
-            <tr>
-                <td><?php echo $developer['developerID']; ?></td>
-                <td><?php echo $developer['name']; ?></td>
-            </tr>
-            <?php endforeach; ?>
+<tr>
+    <td><?php echo $developer['developerID']; ?></td>
+    <td><?php echo $developer['name']; ?></td>
+    <td>
+        <form action="delete_developer.php" method="post">
+            <input type="hidden" name="developer_id" value="<?php echo $developer['developerID']; ?>">
+            <button type="submit" class="btn btn-danger btn-sm delete-btn">Delete</button>
+        </form>
+    </td>
+</tr>
+<?php endforeach; ?>
+
         </table>
     </section>
 </main><!-- /.container -->
@@ -67,6 +75,22 @@ include 'includes/include.php'
       <p>&copy; <?php echo date("Y"); ?> Games Database, Inc.</p>
     </div>
   </div>
+
+  <div id="delete-success-message" class="alert alert-success" role="alert" style="display:none">
+  The row has been successfully deleted.
+</div>
+
 </footer>
+<script>
+
+  // Show success message when page loads
+  $(document).ready(function() {
+    $('#delete-success-message').fadeIn();
+    setTimeout(function() {
+      $('#delete-success-message').fadeOut();
+    }, 3000); // hide after 3 seconds
+  });
+</script>
 </body>
+
 </html>

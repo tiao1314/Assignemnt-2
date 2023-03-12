@@ -1,36 +1,34 @@
-
 CREATE DATABASE IF NOT EXISTS `game_shop` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `game_shop`;
 
-
-DROP TABLE IF EXISTS `developers`
+DROP TABLE IF EXISTS `developers`;
 CREATE TABLE `developers` (
-`developerID` INT PRIMARY KEY AUTO_INCREMENT,
-`name` VARCHAR(255) NOT NULL
+  `developerID` INT PRIMARY KEY AUTO_INCREMENT,
+  `name` VARCHAR(255) NOT NULL
 );
 
 DROP TABLE IF EXISTS `publishers`;
 CREATE TABLE `publishers` (
-`publisherID` INT PRIMARY KEY AUTO_INCREMENT,
-`name` VARCHAR(255) NOT NULL
+  `publisherID` INT PRIMARY KEY AUTO_INCREMENT,
+  `name` VARCHAR(255) NOT NULL
 );
 
 DROP TABLE IF EXISTS `games`;
 CREATE TABLE `games` (
-`gameID` INT PRIMARY KEY AUTO_INCREMENT,
-`name` VARCHAR(255) NOT NULL,
-`release_date` DATE NOT NULL,
-`genre` VARCHAR(255) NOT NULL,
-`developerID` INT NOT NULL,
-`publisherID` INT NOT NULL,
-`platform` VARCHAR(255) NOT NULL,
-`player_count` VARCHAR(255) NOT NULL,
-`age_rating` VARCHAR(10) NOT NULL,
-`price` DECIMAL(10, 2) NOT NULL,
-`description` TEXT NOT NULL,
-FOREIGN KEY (developerID) REFERENCES developers(developerID),
-FOREIGN KEY (publisherID) REFERENCES publishers(publisherID)
-)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `gameID` INT PRIMARY KEY AUTO_INCREMENT,
+  `name` VARCHAR(255) NOT NULL,
+  `release_date` DATE NOT NULL,
+  `genre` VARCHAR(255) NOT NULL,
+  `developerID` INT NOT NULL,
+  `publisherID` INT NOT NULL,
+  `platform` VARCHAR(255) NOT NULL,
+  `player_count` VARCHAR(255) NOT NULL,
+  `age_rating` VARCHAR(10) NOT NULL,
+  `price` DECIMAL(10, 2) NOT NULL,
+  `description` TEXT NOT NULL,
+  FOREIGN KEY (developerID) REFERENCES developers(developerID),
+  FOREIGN KEY (publisherID) REFERENCES publishers(publisherID)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 INSERT INTO developers (name)
@@ -91,7 +89,7 @@ VALUES
   (20,'The Last of Us Part II', '2020-06-19', 'Action-Adventure', 11, 5, 'PlayStation 4', 'Singleplayer', 'M', 59.99, 'The Last of Us Part II is a post-apocalyptic action-adventure game that follows the story of Ellie and Joel in a world ravaged by a deadly virus.'),
   (21,'Death Stranding', '2019-11-08', 'Action', 12, 5, 'PlayStation 4, PC', 'Singleplayer', 'M', 59.99, 'Death Stranding is an action game set in an open-world environment, where players must deliver cargo and connect isolated cities in a world on the brink of extinction.'),
   (22,'Rainbow Six Siege', '2015-12-01', 'Tactical shooter', 13, 13, 'PC, Xbox One, PlayStation 4', 'Multiplayer', 'M', 19.99, 'Rainbow Six Siege is a team-based tactical shooter that emphasizes environmental destruction and co-operation between players.'),
-  (23,'Sea of Thieves', '2018-03-20', 'Action-Adventure', 14, 7, 'PC, Xbox One', 'Multiplayer', 'T', 39.99, 'Sea of Thieves is an action-adventure game that takes place in a shared open-world environment, where players can take on the role of a pirate and explore the seas with their crew.'),
+  (23,'Sea of Thieves', '2018-03-20', 'Action-Adventure', 14, 7, 'PC, Xbox One', 'Multiplayer', 'T', 39.99, 'Sea of Thieves is an action-adventure game that takes place in a shared open-world environment, where players can take on the role of a pirate and explore the seas with their crew.');
   
 
   --1. Display all games in the database:
