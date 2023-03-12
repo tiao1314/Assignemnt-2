@@ -42,6 +42,7 @@ This file displays information about video games.
 ### developers.php
 
 This file displays information about video game developers.
+We can also add new developers using the add button modal on the top and a delete button on the side of the database
 
 ## Credits
 
